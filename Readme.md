@@ -8,6 +8,8 @@
 
 ### Sections
 
+- [X-Ray](./step23_x-ray)
+
 ### Class Videos
 
 - [YouTube English]()
