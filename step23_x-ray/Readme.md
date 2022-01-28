@@ -29,3 +29,4 @@ X-ray help us analyze and debug distributed applications (workflow of different 
 ## Sections
 
 - [Simple lambda tracing](./step00_simple_lambda_tracing)
+- [Lambda with S3 tracing](./step01_lambda_with_s3_tracing)
