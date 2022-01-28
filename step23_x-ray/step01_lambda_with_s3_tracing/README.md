@@ -39,3 +39,25 @@
      role: role,
    });
    ```
+
+8. Create "./lambda/index.ts" to define lambda handler code
+
+   ```js
+   import * as AWS from 'aws-sdk';
+   import * as AWSXRay from 'aws-xray-sdk-core';
+   import { APIGatewayEvent } from 'aws-lambda';
+   exports.handler = (event: APIGatewayEvent) => {
+     const s3 = AWSXRay.captureAWSClient(new AWS.S3());
+     s3.listBuckets((err, data) => {
+       if (data) {
+         console.log('Success', data.Buckets);
+       } else {
+         console.log('Error', err);
+       }
+     });
+   };
+   ```
+
+9. Deploy the app using `cdk deploy`
+10. Test using console
+11. Destroy the app using `cdk destroy`
